@@ -1,3 +1,14 @@
+nano (4.8-1ubuntu1.1) focal-security; urgency=medium
+
+  * SECURITY UPDATE: Emergency file could be replaced by a malicious symlink.
+    - debian/patches/CVE-2024-5742.patch: Use fchmod and fchown in write_file()
+      in src/files.c instead of using chmod and chown in emergency_save() in
+      src/nano.c. Add EMERGENCY write type in kind_of_writing_type enum in
+      src/nano.h. Update fd in write_file() in src/files.c. Based on upstream.
+    - CVE-2024-5742
+
+ -- Hlib Korzhynskyy <hlib.korzhynskyy@canonical.com>  Wed, 09 Oct 2024 17:50:23 -0230
+
 nano (4.8-1ubuntu1) focal; urgency=medium
 
   * Thanks Benno Schulenberg for providing the info and patches
